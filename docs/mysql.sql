@@ -14,9 +14,10 @@
  Date: 02/08/2019 22:37:26
 */
 
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
 
+
+create database sso;
+use sso;
 -- ----------------------------
 -- Table structure for persistent_logins
 -- ----------------------------
@@ -57,7 +58,7 @@ CREATE TABLE `t_admin` (
   `update_time` datetime NOT NULL DEFAULT '1970-01-01 00:00:00' COMMENT '更新时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `IDX_admin_username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 ;
 
 -- ----------------------------
 -- Records of t_admin
@@ -384,4 +385,3 @@ BEGIN;
 INSERT INTO `t_sys_log` VALUES (1, 'admin', 'admin,de,pm,test', '登录成功', 'net.dreamlu.secrity.auth.DreamAuthHandler.onAuthenticationSuccess();', '/session?username＝admin＆password＝******＆code＝6s4u＆remember-me＝true', '0:0:0:0:0:0:0:1', '2019-08-02 09:22:59');
 COMMIT;
 
-SET FOREIGN_KEY_CHECKS = 1;

@@ -1,3 +1,13 @@
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8111
+  servlet:
+    context-path: /sso
+
 spring:
   output:
     ansi:
@@ -33,6 +43,8 @@ spring:
       config: classpath:config/ehcache.xml
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
+  profiles:
+    active: dev
 
 ## mybatis
 mybatis-plus:
